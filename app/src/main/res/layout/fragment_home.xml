@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivHomeBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_screen_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHomeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="45dp"
+        android:text="FilmKu"
+        android:textStyle="bold"
+        android:fontFamily="@font/merriweather_regular"
+        android:textColor="#110E47"
+        />
+
+    <TextView
+        android:id="@+id/tvShowing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/tvHomeHeader"
+        app:layout_constraintTop_toTopOf="@id/tvHomeHeader"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="20dp"
+        android:text="Now Showing"
+        android:textStyle="bold"
+        android:fontFamily="@font/merriweather_regular"
+        android:textColor="#110E47"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSeeUpper"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="@id/tvShowing"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="0dp"
+        android:layout_marginEnd="20dp"
+        android:text="See more"
+        android:fontFamily="@font/mulish"
+        android:textColor="#AAA9B1"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:background="@drawable/round_button"
+        />
+
+    <androidx.viewpager2.widget.ViewPager2
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/homeUpperPager"
+        app:layout_constraintTop_toBottomOf="@id/tvShowing"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/tvPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/homeUpperPager"
+        app:layout_constraintTop_toBottomOf="@id/homeUpperPager"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="20dp"
+        android:text="Popular"
+        android:textStyle="bold"
+        android:fontFamily="@font/merriweather_regular"
+        android:textColor="#110E47"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSeeLower"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="@id/tvPopular"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="0dp"
+        android:layout_marginEnd="20dp"
+        android:text="See more"
+        android:fontFamily="@font/mulish"
+        android:textColor="#AAA9B1"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:background="@drawable/round_button"
+        />
+    <androidx.viewpager2.widget.ViewPager2
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/homeLowerPager"
+        app:layout_constraintTop_toBottomOf="@id/tvPopular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
